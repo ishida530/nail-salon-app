@@ -31,3 +31,33 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# IntelliJ / Eclipse
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# Java / Maven
+target/
+*.log
+*.tmp
+
+# Node / Angular
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.angular/cache/
+
+# Docker
+**/docker-data/
+**/postgres-data/
+
+# System
+.DS_Store
+Thumbs.db
