@@ -12,5 +12,25 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  backend:
+    build: ../backend
+    container_name: nail-salon-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/nailsalon
+      SPRING_DATASOURCE_USERNAME: nailsalon
+      SPRING_DATASOURCE_PASSWORD: nailsalon
+    depends_on:
+      - db
+
+  frontend:
+    build: ../frontend
+    container_name: nail-salon-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
 volumes:
   postgres_data:
